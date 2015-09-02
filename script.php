@@ -1,7 +1,5 @@
 <?php
 
-$test = '';
-
 include('index.html');
 
 
@@ -14,14 +12,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$password = $_POST['password'];
 	$submit = $_POST['submit'];
 
-	if (isset($name, $email, $password)) { 
+	if (isset($name, $email, $password) && ($name != 'username') && ($email != 'email') && ($password != 'password')) { 
 
 		echo '<div class="row">
 				<div class="col-md-3"></div>
 				<div class="col-md-6">
 				<p>Hey ' . $name . '! Thanks for creating an account, we will send you a confirmation email to:
-				 ' . $email . '</p></div></div><div class="col-md-3"</div>';
+				 ' . $email . '</p></div></div>
+				 <div class="col-md-3"</div>';
 
+	} else {
+		echo '<div class="row">
+				<div class="col-md-3"></div>
+				<div class="col-md-6">
+				<p>Please Fill out all the required fields.</p></div></div>
+				 <div class="col-md-3"</div>';
 	}
 
 
