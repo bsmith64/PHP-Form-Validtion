@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+<title> "Form Test"</title>
+<meta charset="UTF-8">
+
+<!-- Bootstrap -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<!-- Links -->
+<!-- <script src="javascript.js"></script> -->
+<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+
+<div class='container'>
+
+	<div class='row' id='mainbody'>
+
+		<div class='col-md-3'></div>
+
+
+		<div class='col-md-6' id='form_body'>
+
+				<form role='form' method='post'>
+
+					<div class='form-group' id='login_title'>
+						<label><h3>Login</h3></label>
+					</div>
+
+					<div class='form-group'>
+						<input name='name' class='form-control' value='username' id='name'>
+					</div>
+
+					<div class='form-group'>
+						<input name='email' class='form-control' value='email' id='email'>
+					</div>
+
+					<div class='form-group'>
+						<input name='password' class='form-control' value='password' id='pwd'>
+					</div>
+
+					<div class='checkbox'>
+						<label><input type='checkbox'> Sign me up for the newsletter! </label></input>
+					</div>
+					<button name='submit' class='btn btn-md btn-primary' id='button'>Submit</button>
+				</form>
+
+		</div>
+
+		<div class='col-md-3'></div>
+
+		<div class='col-md-12' id='response'></div>
+
+	</div>
+
+</div>
+
+<script>
+
+$(function() {
+	var notxt = ''
+	var allInputs = $(':input');
+		allInputs.focus(function() {
+			notxt = $(this).val();
+			$(this).val('');
+		});
+});
+
+
+</script>
+
+
+
+</body>
+</html>
